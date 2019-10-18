@@ -1,0 +1,28 @@
+
+sudo: false
+
+language: java
+
+install: true
+
+os: linux
+dist: trusty
+jdk: oraclejdk8
+
+
+cache:
+  directories:
+    - "$HOME/.cache"
+deploy:
+  provider: script
+  script: "mvn cobertura:cobertura"
+  skip_cleanup: true
+  on:
+    tags: true
+
+notifications:
+  email:
+    recipients:
+      - sedat.kilinc@attempto.eu
+    on_success: change
+    on_failure: always
