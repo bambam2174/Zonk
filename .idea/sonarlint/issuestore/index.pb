@@ -13,3 +13,6 @@ R
 "src/test/java/LinkScraperTest.java,2/1/2117126575069fe429dbf508a6f536444630e8fd
 ;
 .travis.yml,d/e/dea01dd89a3b602828e630677fde5d77c06441c8
+:
+
+.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302

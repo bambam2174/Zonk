@@ -13,12 +13,20 @@ jdk: oraclejdk8
 cache:
   directories:
     - "$HOME/.cache"
-deploy:
-  provider: script
-  script: "mvn cobertura:cobertura"
-  skip_cleanup: true
-  on:
-    tags: true
+script: ./mvnw clean install
+
+
+jobs:
+  include:
+    - stage: Test
+      script: ./mvnw clean test
+
+#deploy:
+#  provider: script
+#  script: "mvn cobertura:cobertura & mvn deploy"
+#  skip_cleanup: true
+#  on:
+#    tags: true
 
 notifications:
   email:
